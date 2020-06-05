@@ -42,7 +42,7 @@ public class LinkedList {
         size++;
     }
 
-    public boolean isEmpty() {
+    private boolean isEmpty() {
         return first == null;
     }
 
