@@ -65,14 +65,13 @@ public class LinkedList {
         if (isEmpty())
             throw new NoSuchElementException();
 
-        if (first == last) {
+        if (first == last)
             first = last = null;
-            return;
+        else {
+            var second = first.next;
+            first.next = null;
+            first = second;
         }
-
-        var second = first.next;
-        first.next = null;
-        first = second;
 
         size--;
     }
@@ -81,14 +80,13 @@ public class LinkedList {
         if (isEmpty())
             throw new NoSuchElementException();
 
-        if (first == last) {
+        if (first == last)
             first = last = null;
-            return;
+        else {
+            var previous = getPrevious(last);
+            last = previous;
+            last.next = null;
         }
-
-        var previous = getPrevious(last);
-        last = previous;
-        last.next = null;
 
         size--;
     }
