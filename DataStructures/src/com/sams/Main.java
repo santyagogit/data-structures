@@ -1,20 +1,17 @@
 package com.sams;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
         var list = new LinkedList();
-        System.out.println(list.size());
-
-        list.addFirst(10);
-        System.out.println(list.size());
-
+        list.addLast(10);
         list.addLast(20);
         list.addLast(30);
-        System.out.println(list.size());
+        list.reverse();
 
-        list.removeFirst();
-        list.removeLast();
-        System.out.println(list.size());
+        var array = list.toArray();
+        System.out.println(Arrays.toString(array));
     }
 }
